@@ -1,1 +1,26 @@
+document.addEventListener('DOMContentLoaded', () => {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+})
