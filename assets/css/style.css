@@ -10,8 +10,7 @@
 }
 body {
     font-family: 'Abril Fatface', cursive;
-    background-color: black;
-
+    
 }
 
 /* header */
@@ -23,15 +22,24 @@ body {
 }
 h1, h2 {
     text-align: center;  
-    color: white;
+    color: rgb(12, 11, 11);
     letter-spacing: 0.25rem;
 }
 
 p{
     text-align: center;  
-    color: white;
+    color: rgb(14, 13, 13);
     font-family: sans-serif;
 
+}
+/* game area */
+
+#game-area {
+  grid-template-columns: 6.25rem 3.125rem 6.25rem;
+  grid-template-rows: 5rem  auto 5rem; 
+  column-gap:0.625rem;
+  row-gap: 0.938rem;
+  display: flex;   
 }
 
 
