@@ -1,108 +1,72 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome JessicaDJSilva,
+## The Big Bang Theory Memory game 
+The memory game is a classic game made up of pieces that have a figure on one side. It was first mentioned in China in the 15th century and consisted of illustrated and duplicated cards. Each figure is repeated in two different cards.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+To start the game, the pieces are placed with the figures facing down, so that they cannot be seen.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+In the classic game, each participant must, in turn, turn over two pieces and let everyone see them. If the figures are the same, the participant must collect this pair and play again. If they are different pieces, they must be turned over again, and the turn is passed to the next participant.
 
-## Gitpod Reminders
+In The Big Bang Theory Game, the player needs to find the 5 characters of the American tv series, the 10 cards are sorted randomly and when one match is found both images stay static on the user screen.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## Features
+![test image](readme_images/responsive.jpg)
 
-A blue button should appear to click: _Make Public_,
+### Header
+There is an image on the top of the page with the 5 characters that the user needs to find in the game.
+The image contrast with the background for better accessibility. 
 
-Another blue button should appear to click: _Open Browser_.
+#### How to play
+Before starting the game, the user has clear instructions on how the game works and what is needed to do to achieve the aim.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Game Results
+when the player find all the matching cards the brower will trow a mensage "well done you found the gang"
+![test image](readme_images/mensage.jpg)
 
-A blue button should appear to click: _Make Public_,
+## Testing
+ - The website works in the 3 main browsers: Chrome, Edge, Firefox.
+ - The website looks correct in all common dimensions using the dev tools tool to change the size of the website each time.
+ - All text is readable and accessible with all images having alt text and all text being contrasted against the background.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Bugs
+- The page images were giving 404 errors because the path was related to the JavaScript file, not HTML.
+- The link that I used for the images didn't work originally due to a space in the name, this was fixed by renaming the images and the references.
+- The images were showing in the same place every time was necessary a shuffle function to make it randomly 
 
-To log into the Heroku toolbelt CLI:
+## Validator Testing 
+- No HTML issues were found after using the W3C validator and resolving any issues.
+![test image](readme_images/htmltest.jpg)
+-- No CSS issues were found after using Jigsaw validator and resolving any issues.
+![test image](readme_images/csstest.jpg)
+- Accessibility checked on lighthouse.
+![test image](readme_images/lighthouse.jpg)
+- 
+## Deployment
+To deploy my game on GitHub I follow the steps.
+Click on setting.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+![test image](readme_images/deployment1.jpg)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+scroll down to GitHub pages and click on the link.
 
-------
+![test image](readme_images/deployment2.jpg)
 
-## Release History
+Inside GitHub page change source from none to Main.
+![test image](readme_images/deployment3.jpg)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+The message will show that the website is will be published soon.
+![test image](readme_images/deployment4.jpg)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+After a few seconds, the website will be published, check the live link [here](https://jessicadjsilva.github.io/Portifolio2-project/)
+![test image](readme_images/deployment5.jpg)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Unfixed bugs
+No unfixed bugs to report.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Credit
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Google fonts for the website fonts.
+- Google images for all the images.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
