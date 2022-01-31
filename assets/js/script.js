@@ -1,143 +1,64 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // array for the images 
-    const ImagesArray = [{
-            name: 'Penny',
-            img: 'images/ Penny.jpg'
-
-        },
-
-        {
-            name: 'Penny',
-            img: 'images / Penny.jpg'
-
-        },
 
 
-        {
-            name: 'Leonard',
-            img: 'images / Leonard.jpg'
+let container = document.getElementById('game-area');
 
-        },
+let elements = container.children
 
-
-        {
-            name: 'Leonard',
-            img: 'images / Leonard.jpg'
-
-        },
-
-        {
-            name: 'sheldon',
-            img: 'images / sheldon.jpg'
-        },
-
-        {
-            name: 'sheldon',
-            img: 'images / sheldon.jpg'
-        },
+let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+nums.sort(() => 0.5 - Math.random());
+console.log(nums);
+nums.forEach(num => container.appendChild
 
 
-        {
-            name: 'Raj',
-            img: 'images / raj.jpg'
-        },
+    (elements[num]));
 
+const background = 'assets/images/back.jpg';
+const images = ['assets/images/howard.jpg', 'assets/images/howard.jpg', 'assets/images/Leonard.jpg','assets/images/Leonard.jpg', 'assets/images/Penny.jpg', 'assets/images/Penny.jpg', 'assets/images/raj.jpg', 'assets/images/raj.jpg', 'assets/images/sheldon.jpg', 'assets/images/sheldon.jpg'];
 
-        {
-            name: 'Raj',
-            img: 'images / raj.jpg'
-        },
+let selectedImage = null;
+let awaiting = false;
+let win = 0;
 
-        {
-            name: 'howard',
-            img: 'images / howard.jpg'
-        },
+function showAll() {
+    let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    nums.forEach(num => document.getElementById(num).src = images[num]);
+}
 
-        {
-            name: 'howard',
-            img: 'images / howard.jpg'
-        }
+async function imageClick(image) {
 
-    ]
-
-    // funtion to make the cards sort random
-
-    ImagesArray.sort(() => 0.15 - Math.random())
-
-    //  game-area elemet use as constante for create bord game 
-
-    const gameArea = document.querySelector('#game-area')
-
-    let ImageSelected = []
-    let ImageSelectID = []
-    let ImageWin = []
-
-    function CreateGameArea() {
-
-        for (let i = 0; i < ImagesArray.length; i++) {
-            const cardback = document.createElement('img')
-            cardback.setAttribute('src', 'images/back.jpg')
-            cardback.setAttribute('data-id', i)
-            cardback.addEventListener('click', turnBack)
-           
-        }
+    if (awaiting) {
+        return;
     }
-    // check if the images match.
 
-    function checkForMatch() {
-        const cards = document.querySelectorAll('img')
-        const selectOneId = ImageSelectID[0]
-        const selectTwoId = ImageSelectID[1]
+    image.src = images[image.id];
 
-        if (selectOneId == selectTwoId) {
-            cards[selectOneId].setAttribute('src', 'images/back.jpg')
-            cards[selectTwoId].setAttribute('src', 'images/back.jpg')
-        } else if (ImageSelectID[0] === ImageSelectID[1]) {
-            cards[selectOneId].setAttribute('src', 'images/logo.png')
-            cards[selectTwoId].setAttribute('src', 'images/logo.png')
-            cards[selectOneId].removeEventListener('click', 'turnBack')
-            cards[selectTwoId].removeEventListener('click', 'turnBack')
-            ImageWin.push(ImageSelected)
-            alert('Well Done You Found A Match')
+    if (selectedImage) {
+        if ((selectedImage.id % 2 == 0 && image.id == Number(selectedImage.id) + 1) ||
+            (selectedImage.id % 2 == 1 && image.id == Number(selectedImage.id) - 1)) {
+            setStatic(image);
+            setStatic(selectedImage);
+            win += 1;
+            await new Promise(r => setTimeout(r, 200));
+            if (win == 5) {
+                alert("WELL DONE YOU FOUND THE GANG!");
+            }
         } else {
-            cards[selectOneId].setAttribute('src', 'images/back.jpg')
-            cards[selectTwoId].setAttribute('src', 'images/back.jpg')
-            alert('Buzinga! Try again.')
+            awaiting = true;
+            await new Promise(r => setTimeout(r, 2000));
+            awaiting = false;
+            image.src = background;
+            selectedImage.src = background;
         }
 
-        // Check if the user found all cards 
-
-        if (ImageWin.length === ImagesArray.length / 2) {
-            alert('AWSOME YOU FOUND THE WHOLE GANG')
-        }
+        selectedImage = null;
+    } else {
+        selectedImage = image;
     }
-
-
-
-    // Function to turn the cards back if don't match
-
-    function turnBack() {
-        let imgid = this.getAttribute('data-id')
-        ImageSelected.push(ImagesArray[imgid].name)
-        ImageSelectedID.push([imgid])
-        this.setAttribute('src', ImagesArray[imgid].img)
-        if (ImageSelected.length === 2) {
-            setTimeout(checkForMatch, 500)
-        }
-
-    }
-
-// call function of game area 
-
-CreateGameArea()
+}
 
 
 
 
-
-
-
-
-
-
-})
+function setStatic(image) {
+    image.onclick = '';
+}
