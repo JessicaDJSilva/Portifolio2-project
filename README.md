@@ -35,10 +35,14 @@ when the player find all the matching cards the brower will trow a mensage "well
 - The images were showing in the same place every time was necessary a shuffle function to make it randomly 
 
 ## Validator Testing 
+- No JavaScript issues were found after using JSHint JavaScript Validator and resolving any issues.   
+
 - No HTML issues were found after using the W3C validator and resolving any issues.
 ![test image](readme_images/htmltest.jpg)
+
 -- No CSS issues were found after using Jigsaw validator and resolving any issues.
 ![test image](readme_images/csstest.jpg)
+
 - Accessibility checked on lighthouse.
 ![test image](readme_images/lighthouse.jpg)
 - 
